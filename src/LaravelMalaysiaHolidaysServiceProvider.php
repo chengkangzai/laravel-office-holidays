@@ -2,7 +2,6 @@
 
 namespace CCK\LaravelMalaysiaHolidays;
 
-use CCK\LaravelMalaysiaHolidays\Commands\LaravelMalaysiaHolidaysCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 

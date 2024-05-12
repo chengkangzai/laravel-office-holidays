@@ -17,9 +17,6 @@ class LaravelMalaysiaHolidaysServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-malaysia-holidays')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-malaysia-holidays_table')
-            ->hasCommand(LaravelMalaysiaHolidaysCommand::class);
+            ->hasConfigFile();
     }
 }

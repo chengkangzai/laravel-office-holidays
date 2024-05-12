@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": "^8.2",
+        "php": ">=8.0",
         "spatie/laravel-package-tools": "^1.16",
         "illuminate/contracts": "^10.0||^11.0"
     },
@@ -34,28 +34,19 @@
     },
     "autoload": {
         "psr-4": {
-            "CCK\\LaravelMalaysiaHolidays\\": "src/",
-            "CCK\\LaravelMalaysiaHolidays\\Database\\Factories\\": "database/factories/"
+            "CCK\\LaravelMalaysiaHolidays\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "CCK\\LaravelMalaysiaHolidays\\Tests\\": "tests/",
-            "Workbench\\App\\": "workbench/app/"
+            "CCK\\LaravelMalaysiaHolidays\\Tests\\": "tests/"
         }
     },
     "scripts": {
         "post-autoload-dump": "@composer run prepare",
-        "clear": "@php vendor/bin/testbench package:purge-laravel-malaysia-holidays --ansi",
-        "prepare": "@php vendor/bin/testbench package:discover --ansi",
-        "build": [
-            "@composer run prepare",
-            "@php vendor/bin/testbench workbench:build --ansi"
-        ],
         "start": [
             "Composer\\Config::disableProcessTimeout",
-            "@composer run build",
-            "@php vendor/bin/testbench serve"
+            "@composer run build"
         ],
         "analyse": "vendor/bin/phpstan analyse",
         "test": "vendor/bin/pest",

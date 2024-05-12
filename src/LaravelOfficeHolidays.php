@@ -33,5 +33,4 @@ class LaravelOfficeHolidays
 
         return $connector->send($request)->dto();
     }
-
 }

@@ -12,7 +12,7 @@ use Saloon\Http\Faking\MockResponse;
 
 it('can get malaysia holiday', function () {
     new MockClient([
-        GetAllHoliday::class => MockResponse::make(file_get_contents(__DIR__ . '/mocks/malaysia-holiday.html')),
+        GetAllHoliday::class => MockResponse::make(file_get_contents(__DIR__.'/mocks/malaysia-holiday.html')),
     ]);
 
     $s = app(LaravelOfficeHolidays::class)->getAllHolidays('malaysia', 2024);
@@ -27,10 +27,9 @@ it('can get malaysia holiday', function () {
         ->and($s[0]->comments)->toBe('Most states');
 });
 
-
 it('can get malaysia - johor holiday', function () {
     new MockClient([
-        GetAllHolidayByState::class => MockResponse::make(file_get_contents(__DIR__ . '/mocks/malaysia-johor-holiday.html')),
+        GetAllHolidayByState::class => MockResponse::make(file_get_contents(__DIR__.'/mocks/malaysia-johor-holiday.html')),
     ]);
 
     $s = app(LaravelOfficeHolidays::class)->getHolidaysByState('malaysia', 2024, MalaysiaStates::Johor->value);

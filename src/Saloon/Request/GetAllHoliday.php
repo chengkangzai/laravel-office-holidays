@@ -20,15 +20,14 @@ class GetAllHoliday extends Request implements Cacheable
     protected Method $method = Method::GET;
 
     public function __construct(
-        public int       $year,
+        public int $year,
         protected string $country,
-    )
-    {
+    ) {
     }
 
     public function resolveEndpoint(): string
     {
-        return $this->country . '/' . $this->year;
+        return $this->country.'/'.$this->year;
     }
 
     /**
@@ -38,7 +37,6 @@ class GetAllHoliday extends Request implements Cacheable
     {
         return HtmlParserService::getHolidays($response->body(), $this->year);
     }
-
 
     public function resolveCacheDriver(): LaravelCacheDriver
     {

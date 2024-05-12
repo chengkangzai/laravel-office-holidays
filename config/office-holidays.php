@@ -4,6 +4,6 @@
 return [
     'cache' => [
         'driver' => 'file',
-        'duration' => 60 * 60 * 24 * 7 // 1 week
-    ]
+        'duration' => 60 * 60 * 24 * 7, // 1 week
+    ],
 ];

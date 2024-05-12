@@ -1,11 +1,11 @@
 <?php
 
 use Carbon\Carbon;
-use CCK\LaravelMalaysiaHolidays\Enums\HolidayType;
-use CCK\LaravelMalaysiaHolidays\Enums\MalaysiaStates;
-use CCK\LaravelMalaysiaHolidays\LaravelMalaysiaHolidays;
-use CCK\LaravelMalaysiaHolidays\Saloon\Request\GetAllHoliday;
-use CCK\LaravelMalaysiaHolidays\Saloon\Request\GetAllHolidayByState;
+use CCK\LaravelOfficeHolidays\Enums\HolidayType;
+use CCK\LaravelOfficeHolidays\Enums\MalaysiaStates;
+use CCK\LaravelOfficeHolidays\LaravelOfficeHolidays;
+use CCK\LaravelOfficeHolidays\Saloon\Request\GetAllHoliday;
+use CCK\LaravelOfficeHolidays\Saloon\Request\GetAllHolidayByState;
 use Illuminate\Support\Collection;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
@@ -15,7 +15,7 @@ it('can get malaysia holiday', function () {
         GetAllHoliday::class => MockResponse::make(file_get_contents(__DIR__ . '/mocks/malaysia-holiday.html')),
     ]);
 
-    $s = app(LaravelMalaysiaHolidays::class)->getAllHolidays('malaysia', 2024);
+    $s = app(LaravelOfficeHolidays::class)->getAllHolidays('malaysia', 2024);
 
     expect($s)->toBeInstanceOf(Collection::class)
         ->toHaveCount(54)
@@ -33,7 +33,7 @@ it('can get malaysia - johor holiday', function () {
         GetAllHolidayByState::class => MockResponse::make(file_get_contents(__DIR__ . '/mocks/malaysia-johor-holiday.html')),
     ]);
 
-    $s = app(LaravelMalaysiaHolidays::class)->getHolidaysByState('malaysia', 2024, MalaysiaStates::Johor->value);
+    $s = app(LaravelOfficeHolidays::class)->getHolidaysByState('malaysia', 2024, MalaysiaStates::Johor->value);
 
     expect($s)->toBeInstanceOf(Collection::class)
         ->toHaveCount(20)

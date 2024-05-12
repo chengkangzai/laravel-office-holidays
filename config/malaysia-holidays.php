@@ -1,6 +1,6 @@
 <?php
 
-// config for CCK/LaravelMalaysiaHolidays
+// config for CCK/LaravelOfficeHolidays
 return [
 
 ];

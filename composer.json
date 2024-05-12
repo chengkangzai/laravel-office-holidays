@@ -1,12 +1,12 @@
 {
-    "name": "chengkangzai/laravel-malaysia-holidays",
-    "description": "A Laravel Package that list out malaysia's Holiday that Scraped from https://www.officeholidays.com/countries/malaysia",
+    "name": "chengkangzai/laravel-office-holidays",
+    "description": "A Laravel Package that list out holiday that Scraped from https://www.officeholidays.com/countries",
     "keywords": [
         "CCK",
         "laravel",
-        "laravel-malaysia-holidays"
+        "laravel-office-holidays"
     ],
-    "homepage": "https://github.com/chengkangzai/laravel-malaysia-holidays",
+    "homepage": "https://github.com/chengkangzai/laravel-office-holidays",
     "license": "MIT",
     "authors": [
         {
@@ -36,12 +36,12 @@
     },
     "autoload": {
         "psr-4": {
-            "CCK\\LaravelMalaysiaHolidays\\": "src/"
+            "CCK\\LaravelOfficeHolidays\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "CCK\\LaravelMalaysiaHolidays\\Tests\\": "tests/"
+            "CCK\\LaravelOfficeHolidays\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -60,10 +60,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "CCK\\LaravelMalaysiaHolidays\\LaravelMalaysiaHolidaysServiceProvider"
+                "CCK\\LaravelOfficeHolidays\\LaravelOfficeHolidaysServiceProvider"
             ],
             "aliases": {
-                "LaravelMalaysiaHolidays": "CCK\\LaravelMalaysiaHolidays\\Facades\\LaravelMalaysiaHolidays"
+                "LaravelOfficeHolidays": "CCK\\LaravelOfficeHolidays\\Facades\\LaravelOfficeHolidays"
             }
         }
     },

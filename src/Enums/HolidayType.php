@@ -1,6 +1,6 @@
 <?php
 
-namespace CCK\LaravelMalaysiaHolidays\Enums;
+namespace CCK\LaravelOfficeHolidays\Enums;
 
 enum HolidayType: string
 {

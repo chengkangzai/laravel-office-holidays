@@ -1,9 +1,9 @@
 <?php
 
-namespace CCK\LaravelMalaysiaHolidays\Services;
+namespace CCK\LaravelOfficeHolidays\Services;
 
-use CCK\LaravelMalaysiaHolidays\Enums\HolidayType;
-use CCK\LaravelMalaysiaHolidays\Saloon\Dto\HolidayDto;
+use CCK\LaravelOfficeHolidays\Enums\HolidayType;
+use CCK\LaravelOfficeHolidays\Saloon\Dto\HolidayDto;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 

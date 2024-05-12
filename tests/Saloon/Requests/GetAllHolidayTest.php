@@ -1,8 +1,8 @@
 <?php
 
-use CCK\LaravelMalaysiaHolidays\Enums\HolidayType;
-use CCK\LaravelMalaysiaHolidays\Saloon\HolidayConnector;
-use CCK\LaravelMalaysiaHolidays\Saloon\Request\GetAllHoliday;
+use CCK\LaravelOfficeHolidays\Enums\HolidayType;
+use CCK\LaravelOfficeHolidays\Saloon\HolidayConnector;
+use CCK\LaravelOfficeHolidays\Saloon\Request\GetAllHoliday;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Saloon\Http\Faking\MockClient;

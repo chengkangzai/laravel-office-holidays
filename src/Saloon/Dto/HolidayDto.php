@@ -1,8 +1,8 @@
 <?php
 
-namespace CCK\LaravelMalaysiaHolidays\Saloon\Dto;
+namespace CCK\LaravelOfficeHolidays\Saloon\Dto;
 
-use CCK\LaravelMalaysiaHolidays\Enums\HolidayType;
+use CCK\LaravelOfficeHolidays\Enums\HolidayType;
 use Illuminate\Support\Carbon;
 
 class HolidayDto

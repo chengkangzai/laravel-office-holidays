@@ -1,6 +1,6 @@
 <?php
 
-namespace CCK\LaravelMalaysiaHolidays\Saloon;
+namespace CCK\LaravelOfficeHolidays\Saloon;
 
 use Saloon\Http\Connector;
 

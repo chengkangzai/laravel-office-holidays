@@ -1,11 +1,11 @@
 <?php
 
-namespace CCK\LaravelMalaysiaHolidays;
+namespace CCK\LaravelOfficeHolidays;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class LaravelMalaysiaHolidaysServiceProvider extends PackageServiceProvider
+class LaravelOfficeHolidaysServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -15,7 +15,7 @@ class LaravelMalaysiaHolidaysServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('laravel-malaysia-holidays')
+            ->name('laravel-office-holidays')
             ->hasConfigFile();
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace CCK\LaravelMalaysiaHolidays\Tests;
+namespace CCK\LaravelOfficeHolidays\Tests;
 
-use CCK\LaravelMalaysiaHolidays\LaravelMalaysiaHolidaysServiceProvider;
+use CCK\LaravelOfficeHolidays\LaravelOfficeHolidaysServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -13,14 +13,14 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'CCK\\LaravelMalaysiaHolidays\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'CCK\\LaravelOfficeHolidays\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            LaravelMalaysiaHolidaysServiceProvider::class,
+            LaravelOfficeHolidaysServiceProvider::class,
         ];
     }
 
@@ -29,7 +29,7 @@ class TestCase extends Orchestra
         config()->set('database.default', 'testing');
 
         /*
-        $migration = include __DIR__.'/../database/migrations/create_laravel-malaysia-holidays_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/create_laravel-office-holidays_table.php.stub';
         $migration->up();
         */
     }

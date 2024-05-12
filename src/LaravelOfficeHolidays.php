@@ -1,14 +1,14 @@
 <?php
 
-namespace CCK\LaravelMalaysiaHolidays;
+namespace CCK\LaravelOfficeHolidays;
 
-use CCK\LaravelMalaysiaHolidays\Saloon\HolidayConnector;
-use CCK\LaravelMalaysiaHolidays\Saloon\Request\GetAllHoliday;
-use CCK\LaravelMalaysiaHolidays\Saloon\Request\GetAllHolidayByState;
+use CCK\LaravelOfficeHolidays\Saloon\HolidayConnector;
+use CCK\LaravelOfficeHolidays\Saloon\Request\GetAllHoliday;
+use CCK\LaravelOfficeHolidays\Saloon\Request\GetAllHolidayByState;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 
-class LaravelMalaysiaHolidays
+class LaravelOfficeHolidays
 {
     /**
      * @throws FatalRequestException

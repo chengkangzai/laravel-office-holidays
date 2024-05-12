@@ -1,15 +1,15 @@
-# A Laravel Package that list out malaysia's Holiday that Scraped from https://www.officeholidays.com/countries/malaysia
+# A Laravel Package that list out office's Holiday that Scraped from https://www.officeholidays.com/countries
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/chengkangzai/laravel-malaysia-holidays.svg?style=flat-square)](https://packagist.org/packages/chengkangzai/laravel-malaysia-holidays)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/chengkangzai/laravel-malaysia-holidays/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/chengkangzai/laravel-malaysia-holidays/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/chengkangzai/laravel-malaysia-holidays/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/chengkangzai/laravel-malaysia-holidays/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/chengkangzai/laravel-malaysia-holidays.svg?style=flat-square)](https://packagist.org/packages/chengkangzai/laravel-malaysia-holidays)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/chengkangzai/laravel-office-holidays.svg?style=flat-square)](https://packagist.org/packages/chengkangzai/laravel-office-holidays)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/chengkangzai/laravel-office-holidays/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/chengkangzai/laravel-office-holidays/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/chengkangzai/laravel-office-holidays/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/chengkangzai/laravel-office-holidays/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/chengkangzai/laravel-office-holidays.svg?style=flat-square)](https://packagist.org/packages/chengkangzai/laravel-office-holidays)
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
 ## Support us
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-malaysia-holidays.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-malaysia-holidays)
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-office-holidays.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-office-holidays)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
@@ -20,20 +20,20 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require chengkangzai/laravel-malaysia-holidays
+composer require chengkangzai/laravel-office-holidays
 ```
 
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-malaysia-holidays-migrations"
+php artisan vendor:publish --tag="laravel-office-holidays-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-malaysia-holidays-config"
+php artisan vendor:publish --tag="laravel-office-holidays-config"
 ```
 
 This is the contents of the published config file:
@@ -46,14 +46,14 @@ return [
 Optionally, you can publish the views using
 
 ```bash
-php artisan vendor:publish --tag="laravel-malaysia-holidays-views"
+php artisan vendor:publish --tag="laravel-office-holidays-views"
 ```
 
 ## Usage
 
 ```php
-$laravelMalaysiaHolidays = new CCK\LaravelMalaysiaHolidays();
-echo $laravelMalaysiaHolidays->echoPhrase('Hello, CCK!');
+$laravelOfficeHolidays = new CCK\LaravelOfficeHolidays();
+echo $laravelOfficeHolidays->echoPhrase('Hello, CCK!');
 ```
 
 ## Testing

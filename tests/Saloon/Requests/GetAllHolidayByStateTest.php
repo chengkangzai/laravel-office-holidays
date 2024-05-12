@@ -1,10 +1,10 @@
 <?php
 
 
-use CCK\LaravelMalaysiaHolidays\Enums\HolidayType;
-use CCK\LaravelMalaysiaHolidays\Enums\MalaysiaStates;
-use CCK\LaravelMalaysiaHolidays\Saloon\HolidayConnector;
-use CCK\LaravelMalaysiaHolidays\Saloon\Request\GetAllHolidayByState;
+use CCK\LaravelOfficeHolidays\Enums\HolidayType;
+use CCK\LaravelOfficeHolidays\Enums\MalaysiaStates;
+use CCK\LaravelOfficeHolidays\Saloon\HolidayConnector;
+use CCK\LaravelOfficeHolidays\Saloon\Request\GetAllHolidayByState;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Saloon\Http\Faking\MockClient;

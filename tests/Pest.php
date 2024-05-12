@@ -1,5 +1,5 @@
 <?php
 
-use CCK\LaravelMalaysiaHolidays\Tests\TestCase;
+use CCK\LaravelOfficeHolidays\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

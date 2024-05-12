@@ -1,9 +1,9 @@
 <?php
 
-namespace CCK\LaravelMalaysiaHolidays\Saloon\Request;
+namespace CCK\LaravelOfficeHolidays\Saloon\Request;
 
-use CCK\LaravelMalaysiaHolidays\Saloon\Dto\HolidayDto;
-use CCK\LaravelMalaysiaHolidays\Services\HtmlParserService;
+use CCK\LaravelOfficeHolidays\Saloon\Dto\HolidayDto;
+use CCK\LaravelOfficeHolidays\Services\HtmlParserService;
 use Illuminate\Support\Collection;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;

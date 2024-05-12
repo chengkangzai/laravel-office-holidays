@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en" xmlns="http://www.w3.org/1999/xhtml"> <!--<![endif]-->
+<head>
+
+    <script type="text/javascript" async="true">
+        (function() {
+            var host = window.location.hostname;
+            var element = document.createElement('script');
+            var firstScript = document.getElementsByTagName('script')[0];
+            var url = 'https://cmp.inmobi.com'
+                .concat('/choice/', '_3SDpRuY5qwuq', '/', host, '/choice.js?tag_version=V3');
+            var uspTries = 0;
+            var uspTriesLimit = 3;
+            element.async = true;
+            element.type = 'text/javascript';
+            element.src = url;
+
+            firstScript.parentNode.insertBefore(element, firstScript);
+
+            function makeStub() {
+                var TCF_LOCATOR_NAME = '__tcfapiLocator';
+                var queue = [];
+                var win = window;
+                var cmpFrame;
+
+                function addFrame() {
+                    var doc = win.document;
+                    var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+                    if (!otherCMP) {
+                        if (doc.body) {
+                            var iframe = doc.createElement('iframe');
+
+                            iframe.style.cssText = 'display:none';
+                            iframe.name = TCF_LOCATOR_NAME;
+                            doc.body.appendChild(iframe);
+                        } else {
+                            setTimeout(addFrame, 5);
+                        }
+                    }
+                    return !otherCMP;
+                }
+
+                function tcfAPIHandler() {
+                    var gdprApplies;
+                    var args = arguments;
+
+                    if (!args.length) {
+                        return queue;
+                    } else if (args[0] === 'setGdprApplies') {
+                        if (
+                            args.length > 3 &&
+                            args[2] === 2 &&
+                            typeof args[3] === 'boolean'
+                        ) {
+                            gdprApplies = args[3];
+                            if (typeof args[2] === 'function') {
+                                args[2]('set', true);
+                            }
+                        }
+                    } else if (args[0] === 'ping') {
+                        var retr = {
+                            gdprApplies: gdprApplies,
+                            cmpLoaded: false,
+                            cmpStatus: 'stub'
+                        };
+
+                        if (typeof args[2] === 'function') {
+                            args[2](retr);
+                        }
+                    } else {
+                        if(args[0] === 'init' && typeof args[3] === 'object') {
+                            args[3] = Object.assign(args[3], { tag_version: 'V3' });
+                        }
+                        queue.push(args);
+                    }
+                }
+
+                function postMessageEventHandler(event) {
+                    var msgIsString = typeof event.data === 'string';
+                    var json = {};
+
+                    try {
+                        if (msgIsString) {
+                            json = JSON.parse(event.data);
+                        } else {
+                            json = event.data;
+                        }
+                    } catch (ignore) {}
+
+                    var payload = json.__tcfapiCall;
+
+                    if (payload) {
+                        window.__tcfapi(
+                            payload.command,
+                            payload.version,
+                            function(retValue, success) {
+                                var returnMsg = {
+                                    __tcfapiReturn: {
+                                        returnValue: retValue,
+                                        success: success,
+                                        callId: payload.callId
+                                    }
+                                };
+                                if (msgIsString) {
+                                    returnMsg = JSON.stringify(returnMsg);
+                                }
+                                if (event && event.source && event.source.postMessage) {
+                                    event.source.postMessage(returnMsg, '*');
+                                }
+                            },
+                            payload.parameter
+                        );
+                    }
+                }
+
+                while (win) {
+                    try {
+                        if (win.frames[TCF_LOCATOR_NAME]) {
+                            cmpFrame = win;
+                            break;
+                        }
+                    } catch (ignore) {}
+
+                    if (win === window.top) {
+                        break;
+                    }
+                    win = win.parent;
+                }
+                if (!cmpFrame) {
+                    addFrame();
+                    win.__tcfapi = tcfAPIHandler;
+                    win.addEventListener('message', postMessageEventHandler, false);
+                }
+            };
+
+            makeStub();
+
+            var uspStubFunction = function() {
+                var arg = arguments;
+                if (typeof window.__uspapi !== uspStubFunction) {
+                    setTimeout(function() {
+                        if (typeof window.__uspapi !== 'undefined') {
+                            window.__uspapi.apply(window.__uspapi, arg);
+                        }
+                    }, 500);
+                }
+            };
+
+            var checkIfUspIsReady = function() {
+                uspTries++;
+                if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+                    console.warn('USP is not accessible');
+                } else {
+                    clearInterval(uspInterval);
+                }
+            };
+
+            if (typeof window.__uspapi === 'undefined') {
+                window.__uspapi = uspStubFunction;
+                var uspInterval = setInterval(checkIfUspIsReady, 6000);
+            }
+        })();
+    </script>
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NTLJCTY7H2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NTLJCTY7H2');
+    </script>
+    <link rel="preconnect" href="https://a.pub.network/" crossorigin />
+    <link rel="preconnect" href="https://b.pub.network/" crossorigin />
+    <link rel="preconnect" href="https://c.pub.network/" crossorigin />
+    <link rel="preconnect" href="https://d.pub.network/" crossorigin />
+    <link rel="preconnect" href="https://c.amazon-adsystem.com" crossorigin />
+    <link rel="preconnect" href="https://s.amazon-adsystem.com" crossorigin />
+    <link rel="preconnect" href="https://btloader.com/" crossorigin />
+    <link rel="preconnect" href="https://api.btloader.com/" crossorigin />
+    <link rel="preconnect" href="https://confiant-integrations.global.ssl.fastly.net" crossorigin />
+    <link rel="stylesheet" href="https://a.pub.network/officeholidays-com/cls.css">
+    <script data-cfasync="false" type="text/javascript">
+        var freestar = freestar || {};
+        freestar.queue = freestar.queue || [];
+        freestar.config = freestar.config || {};
+        freestar.config.enabled_slots = [];
+        freestar.initCallback = function () { (freestar.config.enabled_slots.length === 0) ? freestar.initCallbackCalled = false : freestar.newAdSlots(freestar.config.enabled_slots) }
+    </script>
+    <script src="https://a.pub.network/officeholidays-com/pubfig.min.js" data-cfasync="false" async></script>
+
+    <meta charset="utf-8">
+    <title itemprop="name">National Holidays in Malaysia in 2024 | Office Holidays</title>
+    <meta name="robots" content="max-image-preview:large">
+    <meta name="description" content="Comprehensive list of National Public Holidays that are celebrated in Malaysia during 2024 with dates and information on the origin and meaning of holidays." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="National Holidays in Malaysia in 2024 | Office Holidays" />
+    <meta property="og:description" content="Comprehensive list of National Public Holidays that are celebrated in Malaysia during 2024 with dates and information on the origin and meaning of holidays." />
+    <meta property="og:site_name" content="Office Holidays" />
+    <meta property="article:publisher" content="https://facebook.com/officeholidays" />
+    <meta name="twitter:card" content="article" />
+    <meta name="twitter:description" content="Comprehensive list of National Public Holidays that are celebrated in Malaysia during 2024 with dates and information on the origin and meaning of holidays." />
+    <meta name="twitter:title" content="National Holidays in Malaysia in 2024 | Office Holidays" />
+    <meta name="twitter:site" content="@officeholidays" />
+    <meta name="twitter:creator" content="@officeholidays" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": "https://www.officeholidays.com/",
+            "name": "Office Holidays",
+            "alternateName": "Office Holidays",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.officeholidays.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
+    <meta name="Keywords" content="Malaysia, Malaysian holidays, offices, national holidays, public holidays, observances, festivals, diversity, global awareness, list of international holidays, international holidays, daily holidays" />
+    <link rel="canonical" href="https://www.officeholidays.com/members/countries/malaysia/2024">
+
+    <link rel="image_src" href="https://static.officeholidays.com/images/1280x853c/malaysia-kuala-lumpur-01.jpg" />
+    <meta property="og:url" content="https://www.officeholidays.com/members/countries/malaysia/2024" />
+    <meta property="og:image" content="https://static.officeholidays.com/images/1280x853c/malaysia-kuala-lumpur-01.jpg/">
+    <meta property="twitter:image" content="https://static.officeholidays.com/images/1280x853c/malaysia-kuala-lumpur-01.jpg/">
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Article",
+            "mainEntityOfPage": "https://www.officeholidays.com/members/countries/malaysia/2024",
+            "headline": "National Holidays in Malaysia in 2024 | Office Holidays",
+            "description": "Comprehensive list of National Public Holidays that are celebrated in Malaysia during 2024 with dates and information on the origin and meaning of holidays.",
+            "datePublished": "2020-01-01T12:02:41Z",
+            "dateModified": "2020-01-01T12:02:41Z",
+            "author": {
+                "@type": "Person",
+                "name": "Toby Shaw"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Office Holidays Ltd.",
+                "sameAs":["https://facebook.com/officeholidays","https://uk.pinterest.com/officeholidays/","https://twitter.com/officeholidays"],
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.officeholidays.com/images/logos/amp-officeholidays-logo-wide.png","width":"600","height":"60"
+                }
+            },
+            "image": [
+                "https://static.officeholidays.com/images/1280x853c/malaysia-kuala-lumpur-01.jpg"
+            ]
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://www.officeholidays.com/css/combined-min.css">
+    <link rel="stylesheet" href="https://www.officeholidays.com/css/style-min.css">
+    <style type="text/css">
+        @font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:900;font-display:auto;src:url(/webfonts/fa-solid-900.eot);src:url(/webfonts/fa-solid-900.eot?#iefix) format("embedded-opentype"),url(/webfonts/fa-solid-900.woff2) format("woff2"),url(/webfonts/fa-solid-900.woff) format("woff"),url(/webfonts/fa-solid-900.ttf) format("truetype"),url(/webfonts/fa-solid-900.svg#fontawesome) format("svg")}.fa{font-family:"Font Awesome 5 Free";font-weight:900}
+        .fa,.fab,.fal,.far,.fas{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;text-rendering:auto;line-height:1}.fa-angle-left:before{content:"\f104"}.fa-angle-right:before{content:"\f105"}.fa-search:before{content:"\f002";font-weight: 900}.fa-bars:before{content:"\f0c9"}.fa-arrow-left:before{content:"\f060"}.fa-arrow-right:before{content:"\f061"}.fa-sign-in-alt:before{content:"\f2f6"}.fa-info-circle:before{content:"\f05a"}.fa-calendar-alt:before{content:"\f073"}.fa-utensils:before{content:"\f2e7"}
+        button,.top-bar-dropdown ul li a:hover,.skill-bar-value,.counter-box.colored,.pagination .current,.pagination ul li a:hover,.pagination-next-prev ul li a:hover,.tabs-nav li.active a,.dropcap.full,.highlight.color,.ui-accordion .ui-accordion-header-active:hover,.ui-accordion .ui-accordion-header-active,.trigger.active a,.trigger.active a:hover,.share-buttons ul li:first-child a,a.caption-btn:hover,.mfp-close:hover,.mfp-arrow:hover,.img-caption:hover figcaption,#price-range .ui-state-default,.selectricItems li:hover,.product-categories .img-caption:hover figcaption,.rsDefault .rsThumbsArrow:hover,.customSelect .selectList dd.hovered,.qtyplus:hover,.qtyminus:hover,a.calculate-shipping:hover,.og-close:hover,.tags a:hover{background:#1077a2}.top-search button:hover,.cart-buttons a,.cart-buttons a.checkout,.menu>li:hover .current,.menu>li.sfHover .current,.menu>li:hover,.menu>li.sfHover,li.dropdown ul li a:hover,#jPanelMenu-menu li a:hover,input[type=button],input[type=submit],a.button.color,a.button.dark:hover,a.button.gray:hover,.icon-box:hover span,.tp-leftarrow:hover,.tp-rightarrow:hover,.sb-navigation-left:hover,.sb-navigation-right:hover,.product-discount,.newsletter-btn,#categories li a:hover,#categories li a.active,.flexslider .flex-prev:hover,.flexslider .flex-next:hover,.rsDefault .rsArrowIcn:hover,.hover-icon,#backtotop a:hover,#filters a:hover,#filters a.selected,table.country-table th{background-color:#1077a2!important}a,.happy-clients-author,#categories li li a.active span,#categories li li a.active,#additional-menu ul li a:hover,#additional-menu ul li a:hover span,.mega a:hover,.mega ul li p a,#not-found i,.dropcap,.list-1.color li:before,.list-2.color li:before,.list-3.color li:before,.list-4.color li:before,.comment-by span.reply a:hover,.comment-by span.reply a:hover i,#categories li ul li a:hover span,#categories li ul li a:hover,table .cart-title a:hover,.st-val a:hover,.meta a:hover{color:#1077a2}.menu>li.dropdown li.sfHover{background-color:#1077a2}.dropdown ul{background-color:#606060}#jPanelMenu-menu a.current{background:#1077a2!important}.current-page{background-color:#1077a2!important}blockquote{border-left:4px solid #1077a2}.categories li a:hover{color:#1077a2!important}
+    </style>
+    <link rel="stylesheet" href="https://www.officeholidays.com/css/print.css" type="text/css" media="print" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="/js/jquery.lazyload-any.js"></script>
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=65d84b5c1eabb90019a5497c&product=sop" async="async"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="stylesheet" type="text/css" href="https://www.officeholidays.com/css/all-flags.css" />
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style type="text/css">
+        .fa-star-and-cresent:before{content:"\f699"}.fa-plane:before{content:"\f072"}.fa-school:before{content:"\f19d"}.fa-briefcase:before{content:"\f0b1"}.fa-virus:before{content:"\f974"}
+    </style>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body oncopy="return false;" class="boxed">
+<div id="wrapper">
+
+
+    <div id="top-bar">
+        <div class="container hide-mobile">
+            <div class="eight columns">
+                <ul class="top-bar-menu">
+                    <li><i class="fa fa-gear"></i> <a href="https://www.officeholidays.com/members/manage/user">Cheng Kang Ching</a></li>
+                    <li><i class="fa fa-sign-out"></i> <a href="https://www.officeholidays.com/logout" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a></li>
+                    <form id="logout-form" action="https://www.officeholidays.com/logout" method="POST" style="display: none;">
+                        <input type="hidden" name="_token" value="EAmXT9d4aCZQFgYvdJyNgKuhqiHyj8NX7rTpo1hG">
+                    </form>
+                </ul>
+            </div>
+
+            <div class="eight columns">
+                <ul class="social-icons">
+                    <li><a class="facebook tooltip bottom" href="https://www.facebook.com/officeholidays" title="Like Office Holidays on Facebook" target="_blank" rel="noopener"><i class="icon-facebook"></i></a></li>
+                    <li><a class="twitter tooltip bottom" href="https://twitter.com/officeholidays" title="Follow Office Holidays on Twitter" target="_blank" rel="noopener"><i class="icon-twitter"></i></a></li>
+                    <li><a class="linkedin  tooltip bottom" href="https://www.linkedin.com/company/office-holidays" title="Follow Office Holidays on LinkedIn" target="_blank" rel="noopener"><i class="icon-linkedin"></i></a></li>
+                    <li><a class="youtube  tooltip bottom" href="https://www.youtube.com/channel/UCdav48fWCT1EMokkrsVfGtw" title="Subscribe to Office Holidays channel on YouTube" target="_blank" rel="noopener"><i class="icon-youtube"></i></a></li>
+                    <li><a class="pinterest tooltip bottom" href="https://uk.pinterest.com/officeholidays/" title="Follow Office Holidays on Pinterest" target="_blank" rel="noopener"><i class="icon-pinterest"></i></a></li>
+                    <li><a class="rss tooltip bottom" href="https://www.officeholidays.com/rss/all_holidays" title="RSS feed of upcoming holidays" target="_blank"><i class="icon-rss"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="container" id="header">
+
+        <div class="eight columns">
+            <div id="logo">
+                <a href="https://www.officeholidays.com/members"><img src="https://static.officeholidays.com/images/280x57c/ohv2_blue.gif" alt="Office Holidays" width="280" height="57" /></a>
+            </div>
+        </div>
+        <div class="eight columns">
+
+            <nav class="top-search">
+                <form method="get" action="/search">
+                    <button><i class="fa fa-search"></i></button>
+                    <input type="text" class="search-text-box" name="q" />
+                </form>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container" id="navigation-container">
+        <div class="sixteen columns">
+            <a href="#menu" class="menu-trigger"><i class="fa fa-bars" style="font-weight:900;"></i></a><a class="menu-right" style="float:right; width:220px; margin: 10px 0 0px 0;" href="https://www.officeholidays.com/members"><img src="https://static.officeholidays.com/images/logos/oh-logo-265.png" alt="Office Holidays logo"></a>
+            <nav id="navigation">
+                <ul class="menu" id="responsive">
+                    <li><a href="https://www.officeholidays.com/members" class="current homepage" id="current">Home</a></li>
+                    <li class="mobile_show"><a href="https://www.officeholidays.com/members/manage/user">Cheng Kang Ching</a></li>
+                    <li class="mobile_show"><a href="https://www.officeholidays.com/logout" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a></li>
+                    <form id="logout-form" action="https://www.officeholidays.com/logout" method="POST" style="display: none;">
+                        <input type="hidden" name="_token" value="EAmXT9d4aCZQFgYvdJyNgKuhqiHyj8NX7rTpo1hG">
+                    </form>
+                    <li class="dropdown">
+                        <a href="https://www.officeholidays.com/members/countries">Countries</a>
+                        <ul>
+                            <li><a href="https://www.officeholidays.com/members/countries">All Countries</a></li>
+                            <li><a href="https://www.officeholidays.com/members/countries/by-continent">by Region</a></li>
+                            <li><a href="https://www.officeholidays.com/members/national-days">National Days <i class="mini-white mini-ico-play" style="float:right"></i></a>
+                                <ul class="hide_mobile">
+                                    <li><a href="https://www.officeholidays.com/members/upcoming/national-days">Upcoming</a></li>
+                                    <li><a href="https://www.officeholidays.com/members/national-days">All Countries</a></li>
+                                    <li><a href="https://www.officeholidays.com/members/national-days/independence">Independence Days</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="https://www.officeholidays.com/members/calendars/2024">Calendars</a>
+                        <ul>
+                            <li>
+                                <a href="https://www.officeholidays.com/members/calendars/2025">2025 <i class="mini-white mini-ico-play" style="float:right"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.officeholidays.com/members/calendars/2024">2024 <i class="mini-white mini-ico-play" style="float:right"></i></a>
+                                <ul class="hide_mobile">
+                                    <li><a href="https://www.officeholidays.com/members/calendars/2024/01">January</a></li>
+                                    <li><a href="https://www.officeholidays.com/members/calendars/2024/02">February</a></li>
+                                    <li><a href="https://www.officeholidays.com/members/calendars/2024/03">March</a></li>
+                                    <li><a href="https://www.officeholidays.com/members/calendars/2024/04">April</a></li>
+                                    <li><a href="https://www.officeholidays.com/members/calendars/2024/05">May</a></li>
+                                    <li><a href="https://www.officeholidays.com/members/calendars/2024/06">June</a></li>
+                                    <li><a href="https://www.officeholidays.com/members/calendars/2024/07">July</a></li>
+                                    <li><a href="https://www.officeholidays.com/members/calendars/2024/08">August</a></li>
+                                    <li><a href="https://www.officeholidays.com/members/calendars/2024/09">September</a></li>
+                                    <li><a href="https://www.officeholidays.com/members/calendars/2024/10">October</a></li>
+                                    <li><a href="https://www.officeholidays.com/members/calendars/2024/11">November</a></li>
+                                    <li><a href="https://www.officeholidays.com/members/calendars/2024/12">December</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://www.officeholidays.com/members/calendars/2023">2023 <i class="mini-white mini-ico-play" style="float:right"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.officeholidays.com/members/calendars/2022">2022 <i class="mini-white mini-ico-play" style="float:right"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.officeholidays.com/members/calendars/2021">2021 <i class="mini-white mini-ico-play" style="float:right"></i></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="https://www.officeholidays.com/members/calendars/planners">Year Planners</a>
+                        <ul>
+                            <li><a href="https://www.officeholidays.com/members/calendars/planners/2025">2025</a></li>
+                            <li><a href="https://www.officeholidays.com/members/calendars/planners/2024">2024</a></li>
+                            <li><a href="https://www.officeholidays.com/members/calendars/planners/2023">2023</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="https://www.officeholidays.com/members/upcoming/week">Upcoming</a>
+                        <ul>
+                            <li><a href="https://www.officeholidays.com/members/day">Today</a></li>
+                            <li><a href="https://www.officeholidays.com/members/upcoming/month">Next 30 Days</a></li>
+                            <li><a href="https://www.officeholidays.com/members/upcoming/week">Next 7 Days</a></li>
+                            <li><a href="https://www.officeholidays.com/members/upcoming/national-days">National Days</a></li>
+                            <li>
+                                <a href="https://www.officeholidays.com/members/upcoming/religious">Religious Holidays <i class="mini-white mini-ico-play" style="float:right"></i></a>
+                                <ul class="hide_mobile">
+                                    <li><a href="https://www.officeholidays.com/members/upcoming/religious/buddhist">Buddhist</a></li>
+                                    <li><a href="https://www.officeholidays.com/members/upcoming/religious/christian">Christian</a></li>
+                                    <li><a href="https://www.officeholidays.com/members/upcoming/religious/hindu">Hindu</a></li>
+                                    <li><a href="https://www.officeholidays.com/members/upcoming/religious/islamic">Islamic</a></li>
+                                    <li><a href="https://www.officeholidays.com/members/upcoming/religious/jewish">Jewish</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="https://www.officeholidays.com/members/upcoming/countdown">Countdown</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">More</a>
+                        <ul>
+                            <li><a href="https://blog.officeholidays.com/">Blog</a></li>
+                            <li><a href="https://www.officeholidays.com/members/diversity-months">Diversity Months</a></li>
+                            <li><a href="https://www.officeholidays.com/members/facts">Holiday Facts</a></li>
+                            <li><a href="https://www.officeholidays.com/members/news">Holiday News</a></li>
+                            <li><a href="https://www.officeholidays.com/members/holiday-information">Holiday Pay Rules</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section class="titlebar">
+        <div class="container">
+            <div class="sixteen columns">
+                <h1 class="nav_h1" itemprop="headline">National Holidays in Malaysia in 2024</h1>
+                <nav id="breadcrumbs">
+                    <ul>
+                        <li><a href="https://www.officeholidays.com/members">Home</a></li>
+                        <li><a href="https://www.officeholidays.com/members/countries">Countries</a></li>
+                        <li class="remarks">Malaysia</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="sidebar columns u-max-full-width">
+            <div class="widget margin-top-0">
+
+
+                <select class="year" name="year">
+                    <option value>Change year</option>
+                    <option value="/2025">2025</option>
+                    <option value="/2024">2024</option>
+                    <option value="/2023">2023</option>
+                    <option value="/2022">2022</option>
+                    <option value="/2021">2021</option>
+                    <option value="/2020">2020</option>
+                    <option value="/2019">2019</option>
+                    <option value="/2018">2018</option>
+                    <option value="/2017">2017</option>
+                </select>
+                <div class="clearfix"></div>
+                <select class="region_select" name="region">
+                    <option value>Select a State</option>
+                    <option value="/johor">Johor</option>
+                    <option value="/kedah">Kedah</option>
+                    <option value="/kelantan">Kelantan</option>
+                    <option value="/kuala-lumpur">Kuala Lumpur</option>
+                    <option value="/labuan">Labuan</option>
+                    <option value="/melaka">Melaka</option>
+                    <option value="/negeri-sembilan">Negeri Sembilan</option>
+                    <option value="/pahang">Pahang</option>
+                    <option value="/penang">Penang</option>
+                    <option value="/perak">Perak</option>
+                    <option value="/perlis">Perlis</option>
+                    <option value="/putrajaya">Putrajaya</option>
+                    <option value="/sabah">Sabah</option>
+                    <option value="/sarawak">Sarawak</option>
+                    <option value="/selangor">Selangor</option>
+                    <option value="/terengganu">Terengganu</option>
+                </select>
+                <ul class="list-4">
+                    <li><a href="https://www.officeholidays.com/members/guide/malaysia/2024">Guide view</a></li>
+                    <li><a href="https://www.officeholidays.com/members/calendars/planners/malaysia/2024">Year Planner</a></li>
+                    <li><a href="https://www.officeholidays.com/members/subscribe/malaysia">Subscribe to Calendar</a></li>
+                </ul>
+            </div>
+            <script>
+                $(".region_select").change(function ( event ) {
+                    window.location.href = "https://www.officeholidays.com/members/countries/malaysia"+$(this).val()+"/2024";
+                });
+                $(".year").change(function ( event ) {
+                    window.location.href = "https://www.officeholidays.com/members/countries/malaysia"+$(this).val();
+                });
+            </script>
+            <div class="widget margin-top-0">
+                <div class="clearfix"></div>
+                <div id="sticker">
+                    <style type="text/css">
+                        .sidebar_ad { display:none; }
+                        .sidebar_wide_ad { display:none; }
+                        @media  screen and (min-width:768px) and (max-width:1290px) {.sidebar_ad { display:inline-block;}}
+                        @media  screen and (min-width:1291px) {.sidebar_wide_ad { display:inline-block;}}
+                    </style>
+                    <div class="sidebar_wide_ad">
+                        <div align="center" data-freestar-ad="__300x600" id="officeholidays_right_rail_1">
+                            <script data-cfasync="false" type="text/javascript">
+                                freestar.config.enabled_slots.push({ placementName: "officeholidays_right_rail_1", slotId: "officeholidays_right_rail_1" });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="sidebar_ad">
+                        <div align="center" data-freestar-ad="__300x600" id="officeholidays_right_rail_2">
+                            <script data-cfasync="false" type="text/javascript">
+                                freestar.config.enabled_slots.push({ placementName: "officeholidays_right_rail_2", slotId: "officeholidays_right_rail_2" });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="twelve columns">
+
+            <div align="center" data-freestar-ad="__336x280 __336x280" id="officeholidays_leaderboard_atf">
+                <script data-cfasync="false" type="text/javascript">
+                    freestar.config.enabled_slots.push({ placementName: "officeholidays_leaderboard_atf", slotId: "officeholidays_leaderboard_atf" });
+                </script>
+            </div>
+
+
+            <h2 class="headline hide-mobile"><i class="sprite sprite-MY"></i> When are the next National holidays in Malaysia?</h2>
+            <h2 class="headline mobile_show"><img src="https://static.officeholidays.com/images/24x16c/MY.png" class="flag" alt="Malaysia"> Upcoming Holidays</h2>
+            <span class="line margin-bottom-0"></span>
+
+            <div id="new-arrivals" class="showbiz-container">
+
+                <div class="showbiz-navigation">
+                    <div id="showbiz_left_1" class="sb-navigation-left"><i class="fa fa-angle-left"></i></div>
+                    <div id="showbiz_right_1" class="sb-navigation-right"><i class="fa fa-angle-right"></i></div>
+                </div>
+                <div class="clearfix"></div>
+
+                <div class="showbiz" data-left="#showbiz_left_1" data-right="#showbiz_right_1" data-play="#showbiz_play_1">
+                    <div class="overflowholder">
+                        <ul>
+                            <li>
+                                <figure class="portfolio-item">
+                                    <div class="portfolio-holder">
+                                        <a href="https://www.officeholidays.com/members/holidays/malaysia/perlis/birthday-of-the-raja-of-perlis"><img src="https://static.officeholidays.com/images/300x189t/malaysia-perlis-mosque-01.jpg" alt="The Raja of Perlis , Tuanku Syed Sirajuddin was born in Arau, Perlis on May 17th 1943"></a>
+                                        <div class="hover-cover"></div>
+                                    </div>
+                                    <a href="https://www.officeholidays.com/members/holidays/malaysia/perlis/birthday-of-the-raja-of-perlis">
+                                        <section class="item-description">
+                                            <h5>Birthday of the Raja of Perlis</h5>
+                                            <span>
+<strong>May 17</strong>, <span class="date-duration" data-eventdate="2024-05-17"></span>. The Raja of Perlis , Tuanku Syed Sirajuddin was born in Arau, Perlis on May 17th 1943
+</span>
+                                        </section>
+                                    </a>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure class="portfolio-item">
+                                    <div class="portfolio-holder">
+                                        <a href="https://www.officeholidays.com/members/holidays/malaysia/wesak-day"><img src="https://static.officeholidays.com/images/300x189c/buddha.jpg" alt="Marks three key events in Buddhas life - his birthday, the enlightenment and his achievement of Nirvana"></a>
+                                        <div class="hover-cover"></div>
+                                    </div>
+                                    <a href="https://www.officeholidays.com/members/holidays/malaysia/wesak-day">
+                                        <section class="item-description">
+                                            <h5>Wesak Day</h5>
+                                            <span>
+<strong>May 22</strong>, <span class="date-duration" data-eventdate="2024-05-22"></span>. Marks three key events in Buddhas life - his birthday, the enlightenment and his ...
+</span>
+                                        </section>
+                                    </a>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure class="portfolio-item">
+                                    <div class="portfolio-holder">
+                                        <a href="https://www.officeholidays.com/members/holidays/malaysia/pahang/the-sultan-of-pahang-hol"><img src="https://static.officeholidays.com/images/300x189c/malaysia-sultan-pahang-01.jpg" alt="A holiday since 1974 to commemorate the death of the fourth Sultan of Pahang, Sultan Abu Bakar."></a>
+                                        <div class="hover-cover"></div>
+                                    </div>
+                                    <a href="https://www.officeholidays.com/members/holidays/malaysia/pahang/the-sultan-of-pahang-hol">
+                                        <section class="item-description">
+                                            <h5>The Sultan of Pahang Hol</h5>
+                                            <span>
+<strong>May 22</strong>, <span class="date-duration" data-eventdate="2024-05-22"></span>. A holiday since 1974 to commemorate the death of the fourth Sultan of Pahang, Sultan Abu ...
+</span>
+                                        </section>
+                                    </a>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure class="portfolio-item">
+                                    <div class="portfolio-holder">
+                                        <a href="https://www.officeholidays.com/members/holidays/malaysia/pesta-kaamatan"><img src="https://static.officeholidays.com/images/300x189c/harvest_festival_01.jpg" alt="Pesta Kaamatan is a harvest festival celebrated annually in the state of Sabah and territory of Labuan"></a>
+                                        <div class="hover-cover"></div>
+                                    </div>
+                                    <a href="https://www.officeholidays.com/members/holidays/malaysia/pesta-kaamatan">
+                                        <section class="item-description">
+                                            <h5>Pesta Kaamatan</h5>
+                                            <span>
+<strong>May 30</strong>, <span class="date-duration" data-eventdate="2024-05-30"></span>. Pesta Kaamatan is a harvest festival celebrated annually in the state of Sabah and ...
+</span>
+                                        </section>
+                                    </a>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure class="portfolio-item">
+                                    <div class="portfolio-holder">
+                                        <a href="https://www.officeholidays.com/members/holidays/malaysia/pesta-kaamatan"><img src="https://static.officeholidays.com/images/300x189c/harvest_festival_01.jpg" alt="Pesta Kaamatan is a harvest festival celebrated annually in the state of Sabah and territory of Labuan"></a>
+                                        <div class="hover-cover"></div>
+                                    </div>
+                                    <a href="https://www.officeholidays.com/members/holidays/malaysia/pesta-kaamatan">
+                                        <section class="item-description">
+                                            <h5>Pesta Kaamatan</h5>
+                                            <span>
+<strong>May 31</strong>, <span class="date-duration" data-eventdate="2024-05-31"></span>. Pesta Kaamatan is a harvest festival celebrated annually in the state of Sabah and ...
+</span>
+                                        </section>
+                                    </a>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure class="portfolio-item">
+                                    <div class="portfolio-holder">
+                                        <a href="https://www.officeholidays.com/members/holidays/malaysia/sarawak/gawai-dayak"><img src="https://static.officeholidays.com/images/300x189c/malaysia-gawai-dayak-01.jpg" alt="Sarawak. Dayak Festival is a major harvest festival celebrated over two days"></a>
+                                        <div class="hover-cover"></div>
+                                    </div>
+                                    <a href="https://www.officeholidays.com/members/holidays/malaysia/sarawak/gawai-dayak">
+                                        <section class="item-description">
+                                            <h5>Gawai Dayak</h5>
+                                            <span>
+<strong>Jun 1</strong>, <span class="date-duration" data-eventdate="2024-06-01"></span>. Sarawak. Dayak Festival is a major harvest festival celebrated over two days
+</span>
+                                        </section>
+                                    </a>
+                                </figure>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <script>
+                $(function(){
+                    $(".country-listing").tipTip();
+                });
+            </script>
+            <h2 class="headline"><i class="sprite sprite-MY"></i> List of Holidays in Malaysia in 2024</h2><span class="line margin-bottom-25"></span><div class="clearfix"></div>
+            <table class="country-table">
+                <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Date</th>
+                    <th>Holiday Name</th>
+                    <th class="comments">Type</th>
+                    <th class="hide-ipadmobile">Comments</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="region-past">
+                    <td>Monday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-01-01">Jan 01</time></td>
+                    <td><a class="country-listing" title="Kuala Lumpur, Labuan, Melaka, Negeri Sembilan, Pahang, Penang, Perak, Putrajaya, Sabah, Sarawak, Selangor" href="https://www.officeholidays.com/members/holidays/malaysia/international-new-years-day">New Year&#039;s Day</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Most states</td>
+                </tr>
+                <tr class="region-past">
+                    <td>Sunday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-01-14">Jan 14</time></td>
+                    <td><a class="country-listing" title="Negeri Sembilan" href="https://www.officeholidays.com/members/holidays/malaysia/negeri-sembilan/birthday-of-the-sultan-of-negeri-sembilan">Birthday of the Sultan of Negeri Sembilan</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Negeri Sembilan only</td>
+                </tr>
+                <tr class="region-past">
+                    <td>Thursday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-01-25">Jan 25</time></td>
+                    <td><a class="country-listing" title="Johor, Kuala Lumpur, Negeri Sembilan, Penang, Perak, Putrajaya, Selangor" href="https://www.officeholidays.com/members/holidays/malaysia/thaipusam">Thaipusam</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Several states</td>
+                </tr>
+                <tr class="region-past">
+                    <td>Thursday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-02-01">Feb 01</time></td>
+                    <td><a class="country-listing" title="Kuala Lumpur, Labuan, Putrajaya" href="https://www.officeholidays.com/members/holidays/malaysia/federal-territory-day">Federal Territory Day</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Kuala Lumpur, Labuan, Putrajaya</td>
+                </tr>
+                <tr class="region-past">
+                    <td>Thursday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-02-08">Feb 08</time></td>
+                    <td><a class="country-listing" title="Kedah, Negeri Sembilan, Perlis, Terengganu" href="https://www.officeholidays.com/members/holidays/malaysia/israa-miaraj-night">Isra and Miraj</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Kedah, Perlis and Negeri Sembilan</td>
+                </tr>
+                <tr class="country-past">
+                    <td>Saturday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-02-10">Feb 10</time></td>
+                    <td><a class="country-listing" title="Malaysia" href="https://www.officeholidays.com/members/holidays/malaysia/chinese-new-year">Chinese New Year</a></td>
+                    <td style="white-space:nowrap;" class="comments">National Holiday</td>
+                    <td class="hide-ipadmobile">1st day of 1st lunar month</td>
+                </tr>
+                <tr class="country-past">
+                    <td>Sunday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-02-11">Feb 11</time></td>
+                    <td><a class="country-listing" title="Malaysia" href="https://www.officeholidays.com/members/holidays/malaysia/chinese-new-year">Chinese New Year Holiday</a></td>
+                    <td style="white-space:nowrap;" class="comments">National Holiday</td>
+                    <td class="hide-ipadmobile">2nd day of 1st lunar month</td>
+                </tr>
+                <tr class="region-past">
+                    <td>Monday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-02-12">Feb 12</time></td>
+                    <td><a class="country-listing" title="Kelantan, Kuala Lumpur, Labuan, Melaka, Negeri Sembilan, Pahang, Penang, Perak, Perlis, Putrajaya, Sabah, Sarawak, Selangor, Terengganu" href="https://www.officeholidays.com/members/holidays/malaysia/chinese-new-year">Chinese New Year Holiday</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Except Johor, Kedah</td>
+                </tr>
+                <tr class="region-past">
+                    <td>Tuesday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-02-20">Feb 20</time></td>
+                    <td><a class="country-listing" title="Melaka" href="https://www.officeholidays.com/members/holidays/malaysia/melaka/declaration-of-independence-in-malacca">Malaysian Declaration of Independence Day</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Melaka</td>
+                </tr>
+                <tr class="region-past">
+                    <td>Monday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-03-04">Mar 04</time></td>
+                    <td><a class="country-listing" title="Terengganu" href="https://www.officeholidays.com/members/holidays/malaysia/terengganu/anniversary-of-installation-of-the-sultan-of-terengganu">Anniversary of Installation of the Sultan</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Terengganu</td>
+                </tr>
+                <tr class="region-past">
+                    <td>Tuesday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-03-12">Mar 12</time></td>
+                    <td><a class="country-listing" title="Johor, Kedah, Melaka" href="https://www.officeholidays.com/members/holidays/malaysia/ramadan">Beginning of Ramadan</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Johor, Kedah, Malacca</td>
+                </tr>
+                <tr class="region-past">
+                    <td>Saturday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-03-23">Mar 23</time></td>
+                    <td><a class="country-listing" title="Johor" href="https://www.officeholidays.com/members/holidays/malaysia/johor/birthday-of-the-sultan-of-johor">Birthday of the Sultan of Johor</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Johor only</td>
+                </tr>
+                <tr class="region-past">
+                    <td>Thursday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-03-28">Mar 28</time></td>
+                    <td><a class="country-listing" title="Kelantan, Kuala Lumpur, Labuan, Pahang, Penang, Perak, Perlis, Putrajaya, Selangor, Terengganu" href="https://www.officeholidays.com/members/holidays/malaysia/nuzul-al-quran">Nuzul Al-Quran Day</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">All regions except Johor, Kedah, Malacca, Sabah, Sarawak</td>
+                </tr>
+                <tr class="region-past">
+                    <td>Friday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-03-29">Mar 29</time></td>
+                    <td><a class="country-listing" title="Sabah, Sarawak" href="https://www.officeholidays.com/members/holidays/malaysia/good-friday">Good Friday</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Sabah and Sarawak</td>
+                </tr>
+                <tr class="region-past">
+                    <td>Tuesday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-04-09">Apr 09</time></td>
+                    <td><a class="country-listing" title="Kelantan" href="https://www.officeholidays.com/members/holidays/malaysia/kelantan/hari-raya-puasa">Hari Raya Aidilfitri</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Kelantan</td>
+                </tr>
+                <tr class="country-past">
+                    <td>Wednesday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-04-10">Apr 10</time></td>
+                    <td><a class="country-listing" title="Malaysia" href="https://www.officeholidays.com/members/holidays/malaysia/hari-raya-puasa">Hari Raya Aidilfitri</a></td>
+                    <td style="white-space:nowrap;" class="comments">National Holiday</td>
+                    <td class="hide-ipadmobile">End of Ramadan</td>
+                </tr>
+                <tr class="country-past">
+                    <td>Thursday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-04-11">Apr 11</time></td>
+                    <td><a class="country-listing" title="Malaysia" href="https://www.officeholidays.com/members/holidays/malaysia/hari-raya-puasa">Hari Raya Aidilfitri</a></td>
+                    <td style="white-space:nowrap;" class="comments">National Holiday</td>
+                    <td class="hide-ipadmobile">Second day of holiday for Eid Al-Fitr</td>
+                </tr>
+                <tr class="region-past">
+                    <td>Monday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-04-15">Apr 15</time></td>
+                    <td><a class="country-listing" title="Melaka" href="https://www.officeholidays.com/members/holidays/malaysia/melaka/declaration-of-malacca-as-a-historical-city">Declaration of Malacca as a Historical City</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Malacca</td>
+                </tr>
+                <tr class="region-past">
+                    <td>Friday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-04-26">Apr 26</time></td>
+                    <td><a class="country-listing" title="Terengganu" href="https://www.officeholidays.com/members/holidays/malaysia/terengganu/birthday-of-the-sultan-of-terengganu">Birthday of the Sultan of Terengganu</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Terengganu only. Always celebrated on 26 April</td>
+                </tr>
+                <tr class="country-past">
+                    <td>Wednesday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-05-01">May 01</time></td>
+                    <td><a class="country-listing" title="Malaysia" href="https://www.officeholidays.com/members/holidays/malaysia/labour-day">Labour Day</a></td>
+                    <td style="white-space:nowrap;" class="comments">National Holiday</td>
+                    <td class="hide-ipadmobile">International Workers&#039; Day</td>
+                </tr>
+                <tr class="nap ">
+                    <td>Sunday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-05-12">May 12</time></td>
+                    <td><a class="country-listing" title="Malaysia" href="https://www.officeholidays.com/members/holidays/malaysia/mothers-day">Mother&#039;s Day</a></td>
+                    <td style="white-space:nowrap;" class="comments">Not A Public Holiday</td>
+                    <td class="hide-ipadmobile">2nd Sunday in May. Not a public holiday</td>
+                </tr>
+                <tr class="region ">
+                    <td>Friday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-05-17">May 17</time></td>
+                    <td><a class="country-listing" title="Perlis" href="https://www.officeholidays.com/members/holidays/malaysia/perlis/birthday-of-the-raja-of-perlis">Birthday of the Raja of Perlis</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Perlis only</td>
+                </tr>
+                <tr class="country ">
+                    <td>Wednesday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-05-22">May 22</time></td>
+                    <td><a class="country-listing" title="Malaysia" href="https://www.officeholidays.com/members/holidays/malaysia/wesak-day">Wesak Day</a></td>
+                    <td style="white-space:nowrap;" class="comments">National Holiday</td>
+                    <td class="hide-ipadmobile">Birth of Buddha</td>
+                </tr>
+                <tr class="region ">
+                    <td>Wednesday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-05-22">May 22</time></td>
+                    <td><a class="country-listing" title="Pahang" href="https://www.officeholidays.com/members/holidays/malaysia/pahang/the-sultan-of-pahang-hol">The Sultan of Pahang Hol</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Pahang</td>
+                </tr>
+                <tr class="region ">
+                    <td>Thursday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-05-30">May 30</time></td>
+                    <td><a class="country-listing" title="Labuan, Sabah" href="https://www.officeholidays.com/members/holidays/malaysia/pesta-kaamatan">Pesta Kaamatan</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Sabah and Labuan only</td>
+                </tr>
+                <tr class="region ">
+                    <td>Friday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-05-31">May 31</time></td>
+                    <td><a class="country-listing" title="Labuan, Sabah" href="https://www.officeholidays.com/members/holidays/malaysia/pesta-kaamatan">Pesta Kaamatan</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Sabah and Labuan only</td>
+                </tr>
+                <tr class="region ">
+                    <td>Saturday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-06-01">Jun 01</time></td>
+                    <td><a class="country-listing" title="Sarawak" href="https://www.officeholidays.com/members/holidays/malaysia/sarawak/gawai-dayak">Gawai Dayak</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Sarawak</td>
+                </tr>
+                <tr class="region ">
+                    <td>Sunday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-06-02">Jun 02</time></td>
+                    <td><a class="country-listing" title="Sarawak" href="https://www.officeholidays.com/members/holidays/malaysia/sarawak/gawai-dayak">Gawai Dayak</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Sarawak</td>
+                </tr>
+                <tr class="country ">
+                    <td>Monday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-06-03">Jun 03</time></td>
+                    <td><a class="country-listing" title="Malaysia" href="https://www.officeholidays.com/members/holidays/malaysia/birthday-of-spb-yang-di-pertuan-agong">Birthday of SPB Yang di Pertuan Agong</a></td>
+                    <td style="white-space:nowrap;" class="comments">National Holiday</td>
+                    <td class="hide-ipadmobile">1st Monday in June</td>
+                </tr>
+                <tr class="region ">
+                    <td>Monday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-06-03">Jun 03</time></td>
+                    <td><a class="country-listing" title="Sarawak" href="https://www.officeholidays.com/members/holidays/malaysia/sarawak/gawai-dayak">Gawai Dayak</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Sarawak</td>
+                </tr>
+                <tr class="nap ">
+                    <td>Sunday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-06-16">Jun 16</time></td>
+                    <td><a class="country-listing" title="Malaysia" href="https://www.officeholidays.com/members/holidays/malaysia/fathers-day">Father&#039;s Day</a></td>
+                    <td style="white-space:nowrap;" class="comments">Not A Public Holiday</td>
+                    <td class="hide-ipadmobile">3rd Sunday in June. Not a public holiday</td>
+                </tr>
+                <tr class="region ">
+                    <td>Sunday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-06-16">Jun 16</time></td>
+                    <td><a class="country-listing" title="Kelantan" href="https://www.officeholidays.com/members/holidays/malaysia/kelantan/arafat-haj-day">Arafat (Haj) Day</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile"></td>
+                </tr>
+                <tr class="country ">
+                    <td>Monday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-06-17">Jun 17</time></td>
+                    <td><a class="country-listing" title="Malaysia" href="https://www.officeholidays.com/members/holidays/malaysia/hari-raya-haji">Hari Raya Haji</a></td>
+                    <td style="white-space:nowrap;" class="comments">National Holiday</td>
+                    <td class="hide-ipadmobile">Festival of Sacrifice</td>
+                </tr>
+                <tr class="region ">
+                    <td>Tuesday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-06-18">Jun 18</time></td>
+                    <td><a class="country-listing" title="Kedah, Kelantan, Perlis, Terengganu" href="https://www.officeholidays.com/members/holidays/malaysia/hari-raya-haji">Hari Raya Haji Holiday</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Some states</td>
+                </tr>
+                <tr class="region ">
+                    <td>Sunday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-06-30">Jun 30</time></td>
+                    <td><a class="country-listing" title="Kedah" href="https://www.officeholidays.com/members/holidays/malaysia/kedah/birthday-of-the-sultan-of-kedah">Birthday of the Sultan of Kedah</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Kedah only</td>
+                </tr>
+                <tr class="region ">
+                    <td>Sunday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-07-07">Jul 07</time></td>
+                    <td><a class="country-listing" title="Penang" href="https://www.officeholidays.com/members/holidays/malaysia/penang/georgetown-heritage-day">George Town Heritage Day</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Penang only</td>
+                </tr>
+                <tr class="country ">
+                    <td>Sunday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-07-07">Jul 07</time></td>
+                    <td><a class="country-listing" title="Malaysia" href="https://www.officeholidays.com/members/holidays/malaysia/maal-hijrah">Awal Muharram</a></td>
+                    <td style="white-space:nowrap;" class="comments">National Holiday</td>
+                    <td class="hide-ipadmobile">Hijri New Year</td>
+                </tr>
+                <tr class="region ">
+                    <td>Saturday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-07-13">Jul 13</time></td>
+                    <td><a class="country-listing" title="Penang" href="https://www.officeholidays.com/members/holidays/malaysia/penang/birthday-of-the-governor-of-penang">Birthday of the Governor</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Penang</td>
+                </tr>
+                <tr class="region ">
+                    <td>Monday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-07-22">Jul 22</time></td>
+                    <td><a class="country-listing" title="Sarawak" href="https://www.officeholidays.com/members/holidays/malaysia/sarawak/sarawak-day">Sarawak Day</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile"></td>
+                </tr>
+                <tr class="region ">
+                    <td>Tuesday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-07-30">Jul 30</time></td>
+                    <td><a class="country-listing" title="Pahang" href="https://www.officeholidays.com/members/holidays/malaysia/pahang/birthday-of-the-sultan-of-pahang">Birthday of the Sultan of Pahang</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Pahang only</td>
+                </tr>
+                <tr class="region ">
+                    <td>Sunday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-08-11">Aug 11</time></td>
+                    <td><a class="country-listing" title="Johor" href="https://www.officeholidays.com/members/holidays/malaysia/johor/the-sultan-of-johor-hol">The Sultan of Johor Hol</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Johor only</td>
+                </tr>
+                <tr class="region ">
+                    <td>Saturday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-08-24">Aug 24</time></td>
+                    <td><a class="country-listing" title="Melaka" href="https://www.officeholidays.com/members/holidays/malaysia/melaka/melaka-governors-birthday">Melaka Governor&#039;s Birthday</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Melaka</td>
+                </tr>
+                <tr class="country ">
+                    <td>Saturday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-08-31">Aug 31</time></td>
+                    <td><a class="country-listing" title="Malaysia" href="https://www.officeholidays.com/members/holidays/malaysia/malaysia-national-day">National Day</a></td>
+                    <td style="white-space:nowrap;" class="comments">National Holiday</td>
+                    <td class="hide-ipadmobile">Independence Day</td>
+                </tr>
+                <tr class="country ">
+                    <td>Monday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-09-16">Sep 16</time></td>
+                    <td><a class="country-listing" title="Malaysia" href="https://www.officeholidays.com/members/holidays/malaysia/malaysia-day">Malaysia Day</a></td>
+                    <td style="white-space:nowrap;" class="comments">National Holiday</td>
+                    <td class="hide-ipadmobile">Became a Federal Holiday in 2010</td>
+                </tr>
+                <tr class="country ">
+                    <td>Monday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-09-16">Sep 16</time></td>
+                    <td><a class="country-listing" title="Malaysia" href="https://www.officeholidays.com/members/holidays/malaysia/mawlid">Maulidur Rasul</a></td>
+                    <td style="white-space:nowrap;" class="comments">National Holiday</td>
+                    <td class="hide-ipadmobile">Birthday of Prophet Muhammad</td>
+                </tr>
+                <tr class="region ">
+                    <td>Sunday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-09-29">Sep 29</time></td>
+                    <td><a class="country-listing" title="Kelantan" href="https://www.officeholidays.com/members/holidays/malaysia/kelantan/birthday-of-the-sultan-of-kelantan">Birthday of the Sultan of Kelantan</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Kelantan only</td>
+                </tr>
+                <tr class="region ">
+                    <td>Monday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-09-30">Sep 30</time></td>
+                    <td><a class="country-listing" title="Kelantan" href="https://www.officeholidays.com/members/holidays/malaysia/kelantan/birthday-of-the-sultan-of-kelantan">Birthday of the Sultan of Kelantan Holiday</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Kelantan only. Second day</td>
+                </tr>
+                <tr class="region ">
+                    <td>Saturday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-10-05">Oct 05</time></td>
+                    <td><a class="country-listing" title="Sabah" href="https://www.officeholidays.com/members/holidays/malaysia/sabah/birthday-of-the-governor-of-sabah">Birthday of the Governor of Sabah</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Sabah only. 1st Saturday in October</td>
+                </tr>
+                <tr class="region ">
+                    <td>Saturday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-10-12">Oct 12</time></td>
+                    <td><a class="country-listing" title="Sarawak" href="https://www.officeholidays.com/members/holidays/malaysia/sarawak/birthday-of-the-governor-of-sarawak">Birthday of the Governor of Sarawak</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Sarawak only</td>
+                </tr>
+                <tr class="region ">
+                    <td>Thursday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-10-31">Oct 31</time></td>
+                    <td><a class="country-listing" title="Johor, Kedah, Kelantan, Kuala Lumpur, Labuan, Melaka, Negeri Sembilan, Pahang, Penang, Perak, Perlis, Putrajaya, Sabah, Selangor, Terengganu" href="https://www.officeholidays.com/members/holidays/malaysia/diwali">Deepavali</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">The festival of lights. Except Sarawak</td>
+                </tr>
+                <tr class="region ">
+                    <td>Friday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-11-01">Nov 01</time></td>
+                    <td><a class="country-listing" title="Perak" href="https://www.officeholidays.com/members/holidays/malaysia/perak/birthday-of-the-sultan-of-perak">Birthday of the Sultan of Perak</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Perak</td>
+                </tr>
+                <tr class="region ">
+                    <td>Wednesday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-12-11">Dec 11</time></td>
+                    <td><a class="country-listing" title="Selangor" href="https://www.officeholidays.com/members/holidays/malaysia/selangor/birthday-of-the-sultan-of-selangor">Birthday of The Sultan of Selangor</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Selangor</td>
+                </tr>
+                <tr class="region ">
+                    <td>Tuesday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-12-24">Dec 24</time></td>
+                    <td><a class="country-listing" title="Sabah" href="https://www.officeholidays.com/members/holidays/malaysia/sabah/christmas-eve">Christmas Eve</a></td>
+                    <td style="white-space:nowrap;" class="comments">Regional Holiday</td>
+                    <td class="hide-ipadmobile">Sabah</td>
+                </tr>
+                <tr class="country ">
+                    <td>Wednesday</td>
+                    <td style="white-space:nowrap;"><time itemprop="startDate" datetime="2024-12-25">Dec 25</time></td>
+                    <td><a class="country-listing" title="Malaysia" href="https://www.officeholidays.com/members/holidays/malaysia/christmas-day">Christmas Day</a></td>
+                    <td style="white-space:nowrap;" class="comments">National Holiday</td>
+                    <td class="hide-ipadmobile"></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="clearfix"></div>
+
+            <style>
+                .acct { background-color: #617C77;}
+                .acct span a, .acct td, .acct td a {color: #FFFFFF;}
+                .reset {display:none;}
+            </style>
+            <table class="country-table">
+                <thead>
+                <tr>
+                    <td>Key</td>
+                    <td>
+                        <button id="btn" class="legend filter country tooltip bottom" title="This is a public holiday observed in all regions of this country. Businesses and Government offices are likely to be closed and public transport may run a reduced service.">National Holiday</button> <button id="btn1" style="color:#999;" class="legend filter region tooltip bottom">Regional Holiday</button> <button id="btn2" class="legend filter nap tooltip bottom" title="While not a public holiday, this is an event or festival of note and may involve important local customs and celebrations.">Not a Public Holiday</button> <button id="btn3" class="legend filter govt tooltip bottom" title="This is a holiday that is observed by the government and public sector only.">Government Holiday</button> <button id="btn4" class="filter reset" title="Remove any filters you have applied.">Remove filters</button></td>
+                </tr>
+                </thead>
+            </table>
+            <script>
+                $(function () {
+                    $("#btn").click(function() {
+                        $('tr').show();
+                        $('tr').not('thead tr').not('.country-past').not('.country').hide();
+                        $("#btn4").removeClass( "reset" );
+                    });
+                    $("#btn1").click(function() {
+                        $('tr').show();
+                        $('tr').not('thead tr').not('.region-past').not('.region').hide();
+                        $("#btn4").removeClass( "reset" );
+                    });
+                    $("#btn2").click(function() {
+                        $('tr').show();
+                        $('tr').not('thead tr').not('.nap-past').not('.nap').hide();
+                        $("#btn4").removeClass( "reset" );
+                    });
+                    $("#btn3").click(function() {
+                        $('tr').show();
+                        $('tr').not('thead tr').not('.govt-past').not('.govt').hide();
+                        $("#btn4").removeClass( "reset" );
+                    });
+                    $("#btn4").click(function() {
+                        $('tr').show();
+                        $("#btn4").addClass( "reset" );
+                    });
+                });
+            </script>
+            <hr style="margin: 10px 0 10px;" />
+
+            <div align="center" data-freestar-ad="__336x280 __336x280" id="officeholidays_leaderboard_atf_2">
+                <script data-cfasync="false" type="text/javascript">
+                    freestar.config.enabled_slots.push({ placementName: "officeholidays_leaderboard_atf", slotId: "officeholidays_leaderboard_atf_2" });
+                </script>
+            </div>
+            <div class="clearfix"></div>
+
+            <h2 class="headline">Notes</h2><span class="line margin-bottom-25"></span><div class="clearfix"></div>
+            <ul class="list-4">
+                <li>National holidays are normally observed by most governmental and private organizations.</li>
+                <li>State holidays are normally observed by certain states in Malaysia or when it is relevant to the state itself.</li>
+                <li>The main holy days of each major religion are public holidays, taking place on either the western calendar or religious ones.</li>
+            </ul>
+            <div class="clearfix"></div>
+
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="margin-top-25"></div>
+
+    <div id="footer">
+
+        <div class="container">
+            <div class="four columns">
+                <img src="https://static.officeholidays.com/images/logos/logo-footer.png" alt="Office Holidays" class="margin-top-10" width="136" height="46" />
+                <p class="margin-top-15">Office Holidays provides calendars with dates and information on public holidays and bank holidays in key countries around the world.</p>
+                <ul class="footer-links">
+                    <li><a href="https://www.officeholidays.com/members/about">About Us</a></li>
+                </ul>
+            </div>
+            <div class="four columns">
+
+                <h3 class="headline footer">Newsletter</h3>
+                <span class="line"></span>
+                <div class="clearfix"></div>
+                <p>Sign up to receive a weekly email update on forthcoming public holidays around the world in your inbox every Sunday.</p>
+                <ul class="footer-links">
+                    <li><a href="https://www.officeholidays.com/members/newsletter">Sign up</a></li>
+                </ul>
+            </div>
+            <div class="four columns">
+
+                <h3 class="headline footer">Useful Links</h3>
+                <span class="line"></span>
+                <div class="clearfix"></div>
+                <ul class="footer-links">
+                    <li><a href="https://www.officeholidays.com/members/about/definitions">Holiday Definitions</a></li>
+                    <li><a href="//www.thereisadayforthat.com/" target="_blank" rel="noopener">There is a Day for That!</a></li>
+                    <li><a href="https://www.officeholidays.com/members/officetimezones">Time Zones</a></li>
+                    <li><a href="https://www.officeholidays.com/members/about/socialmedia">Social Media</a></li>
+                </ul>
+            </div>
+            <div class="four columns">
+
+                <h3 class="headline footer">Using the site</h3>
+                <span class="line"></span>
+                <div class="clearfix"></div>
+                <ul class="footer-links">
+                    <li><a href="https://www.officeholidays.com/members/manage/user" rel="”nofollow”">Manage your Account</a></li>
+                    <li><a href="https://www.officeholidays.com/members/about/contact">Contact Us</a></li>
+                    <li><a href="https://www.officeholidays.com/members/about/privacy" rel="”nofollow”">Privacy Policy</a></li>
+                    <li><a href="https://www.officeholidays.com/members/about/terms-and-conditions" rel="”nofollow”">Terms and Conditions</a></li>
+                    <li><a href="https://www.officeholidays.com/members/about/eurocookielaw" rel="”nofollow”">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="footer-bottom">
+
+        <div class="container">
+            <div class="sixteen columns">&copy; Copyright 2024 by <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name"><span style="color:#fff;">Office Holidays Ltd.</span></span></span> All rights reserved.</div>
+        </div>
+
+    </div>
+
+
+    <script defer src="/js/jquery.sticky.js"></script>
+    <script defer>
+        var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+        if(!isMobile) {
+            var footerBottomAdjust = $('html').height() - $('#footer').offset().top + 260;
+            $(document).ready(function(){
+                $("#sticker").sticky({topSpacing:0,bottomSpacing: footerBottomAdjust});
+            });
+        }
+    </script>
+    <script>
+        $('.lazyload').lazyload({
+            load: function(element) {},
+            trigger: "appear"
+        });
+
+        function daysToText(numberOfDays) {
+            if (numberOfDays == 0) {
+                return "is today!";
+            } else if (numberOfDays == 1) {
+                return "is tomorrow";
+            } else if (numberOfDays > 1) {
+                return "is in " + numberOfDays + " days";
+            } else if (numberOfDays == -1) {
+                return "was yesterday";
+            } else {
+                return numberOfDays + "was days ago";
+            }
+        }
+        function createDurations() {
+            $(".date-duration").each(function(index) {
+                targetDateTime = new Date($(this).data("eventdate") + "T00:00:00");
+                localDateTime = new Date();
+                oneDay = 86400000;
+                days = Math.ceil((targetDateTime - localDateTime) / oneDay);
+                $(this).html(daysToText(days));
+            });
+        }
+        createDurations();
+    </script>
+    <script defer src="https://www.officeholidays.com/js/jquery.jpanelmenu.js"></script>
+    <script defer src="https://www.officeholidays.com/js/jquery.themepunch.showbizpro.min.js"></script>
+    <script defer src="https://www.officeholidays.com/js/jquery.themepunch.plugins.min.js"></script>
+    <script defer src="https://www.officeholidays.com/js/jquery.magnific-popup.min.js"></script>
+    <script defer src="https://www.officeholidays.com/js/superfish.js"></script>
+    <script async src="https://www.officeholidays.com/js/jquery.pureparallax.js"></script>
+    <script defer src="https://www.officeholidays.com/js/jquery.pricefilter.js"></script>
+    <script defer src="https://www.officeholidays.com/js/SelectBox.js"></script>
+    <script defer src="https://www.officeholidays.com/js/modernizr.custom.js"></script>
+    <script defer src="https://www.officeholidays.com/js/jquery.flexslider-min.js"></script>
+    <script defer src="https://www.officeholidays.com/js/jquery.tooltips.min.js"></script>
+    <script defer src="https://www.officeholidays.com/js/jquery.various.min.js"></script>
+    <script defer src="https://www.officeholidays.com/js/custom.js"></script>
+</div>
+</body>
+</html>

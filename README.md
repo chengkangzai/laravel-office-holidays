@@ -6,7 +6,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/chengkangzai/laravel-office-holidays.svg?style=flat-square)](https://packagist.org/packages/chengkangzai/laravel-office-holidays)
 
 This package is a Laravel Package that list out office's Holiday that Scraped from https://www.officeholidays.com/.
-This 
+The underlying package that is used to scrape the data is using [Saloon](https://docs.saloon.dev/).
 
 
 ## Installation
@@ -71,6 +71,9 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 - [Ching Cheng Kang](https://github.com/chengkangzai)
 - [All Contributors](../../contributors)
+
+## Alternatives
+This project was inspired by [Hafiq](https://github.com/afiqiqmal), his package [MalaysiaHoliday](https://github.com/afiqiqmal/MalaysiaHoliday) is a great alternative for Malaysian Holidays, this package does not limit the usage for laravel.
 
 ## License
 

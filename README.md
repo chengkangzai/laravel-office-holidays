@@ -5,7 +5,8 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/chengkangzai/laravel-office-holidays/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/chengkangzai/laravel-office-holidays/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/chengkangzai/laravel-office-holidays.svg?style=flat-square)](https://packagist.org/packages/chengkangzai/laravel-office-holidays)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+This package is a Laravel Package that list out office's Holiday that Scraped from https://www.officeholidays.com/.
+This 
 
 
 ## Installation
@@ -26,12 +27,17 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'cache' => [
+        'driver' => 'file',
+        'duration' => 60 * 60 * 24 * 7 // 1 week
+    ]
 ];
 ```
 
 ## Usage
 
 ### Get All Holidays for a specific country and year
+
 ```php
 $laravelOfficeHolidays = new CCK\LaravelOfficeHolidays();
 app(LaravelOfficeHolidays::class)->getAllHolidays('malaysia', 2024)

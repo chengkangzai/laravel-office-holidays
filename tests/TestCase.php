@@ -2,9 +2,9 @@
 
 namespace CCK\LaravelMalaysiaHolidays\Tests;
 
+use CCK\LaravelMalaysiaHolidays\LaravelMalaysiaHolidaysServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use CCK\LaravelMalaysiaHolidays\LaravelMalaysiaHolidaysServiceProvider;
 
 class TestCase extends Orchestra
 {

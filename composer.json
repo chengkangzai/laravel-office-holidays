@@ -43,11 +43,6 @@
         }
     },
     "scripts": {
-        "post-autoload-dump": "@composer run prepare",
-        "start": [
-            "Composer\\Config::disableProcessTimeout",
-            "@composer run build"
-        ],
         "analyse": "vendor/bin/phpstan analyse",
         "test": "vendor/bin/pest",
         "test-coverage": "vendor/bin/pest --coverage",

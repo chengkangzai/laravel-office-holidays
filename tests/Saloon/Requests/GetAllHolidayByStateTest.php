@@ -12,7 +12,7 @@ use Saloon\Http\Faking\MockResponse;
 
 it('can get malaysia - johor holiday - saloon', function () {
     new MockClient([
-        GetAllHolidayByState::class => MockResponse::make(file_get_contents(__DIR__ . '/mocks/malaysia-johor-holiday.html')),
+        GetAllHolidayByState::class => MockResponse::make(file_get_contents(__DIR__ . '/../../mocks/malaysia-johor-holiday.html')),
     ]);
     $connector = new HolidayConnector();
     $request = new GetAllHolidayByState(2024, 'malaysia', MalaysiaStates::Johor->value);

@@ -73,7 +73,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 - [All Contributors](../../contributors)
 
 ## Alternatives
-This project was inspired by [Hafiq](https://github.com/afiqiqmal), his package [MalaysiaHoliday](https://github.com/afiqiqmal/MalaysiaHoliday) is a great alternative for Malaysian Holidays, this package does not limit the usage for laravel.
+[MalaysiaHoliday](https://github.com/afiqiqmal/MalaysiaHoliday) -> This project was inspired by [Hafiq](https://github.com/afiqiqmal), his package [MalaysiaHoliday](https://github.com/afiqiqmal/MalaysiaHoliday) is a great alternative for Malaysian Holidays, this package does not limit the usage for laravel.
+[Spatie Holidays](https://github.com/spatie/holidays) -> This package is a great alternative for holidays from spatie, it is more robust and does not rely on scraping data from the internet.
 
 ## License
 

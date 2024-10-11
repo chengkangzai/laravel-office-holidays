@@ -36,14 +36,14 @@ return [
 
 ## Usage
 
-### Get All Holidays for a specific country and year
+### Get All Holidays for a specific country with its year
 
 ```php
 $laravelOfficeHolidays = new CCK\LaravelOfficeHolidays();
 app(LaravelOfficeHolidays::class)->getAllHolidays('malaysia', 2024)
 ```
 
-### Get All Holidays for a specific country and year
+### Get All Holidays for a specific state of the country with its year
 ```php
 $laravelOfficeHolidays = new CCK\LaravelOfficeHolidays();
 app(LaravelOfficeHolidays::class)->getHolidaysByState('malaysia', 2024, 'johor')

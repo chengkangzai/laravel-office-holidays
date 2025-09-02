@@ -14,7 +14,7 @@ class HtmlParserService
      */
     public static function getHolidays(string $responseData, int $year): Collection
     {
-        $dom = new \DOMDocument();
+        $dom = new \DOMDocument;
         @$dom->loadHTML($responseData);
         $tr = $dom->getElementsByTagName('tr');
 
@@ -22,17 +22,17 @@ class HtmlParserService
         foreach ($tr as $key => $value) {
             $td = $value->getElementsByTagName('td');
 
-            //skip the first row->header
+            // skip the first row->header
             if ($key === 0) {
                 continue;
             }
 
-            //skip last row->footer
+            // skip last row->footer
             if ($key === $tr->length - 1) {
                 continue;
             }
 
-            //index 0 -> Day, index 1 -> Date, index 2 -> Holiday Name, index 3 -> Type, index 4 -> Comments
+            // index 0 -> Day, index 1 -> Date, index 2 -> Holiday Name, index 3 -> Type, index 4 -> Comments
             $date = Carbon::parse($td[1]?->textContent ?? '')->setYear($year);
             $type = HolidayType::tryFrom($td[3]?->textContent);
             $holiday = new HolidayDto(

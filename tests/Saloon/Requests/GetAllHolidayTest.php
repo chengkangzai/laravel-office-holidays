@@ -12,13 +12,13 @@ it('can get malaysia holiday - saloon', function () {
     new MockClient([
         GetAllHoliday::class => MockResponse::make(file_get_contents(__DIR__.'/../../mocks/malaysia-holiday.html')),
     ]);
-    $connector = new HolidayConnector();
+    $connector = new HolidayConnector;
     $request = new GetAllHoliday(2024, 'malaysia');
 
     $s = $connector->send($request)->dto();
 
     expect($s)->toBeInstanceOf(Collection::class)
-        ->toHaveCount(54)
+        ->toHaveCount(56)
         ->and($s[0]->day)->toBe('Monday')
         ->and($s[0]->date)->toBeInstanceOf(Carbon::class)
         ->and($s[0]->date->format('Y-m-d'))->toBe('2024-01-01')

@@ -33,14 +33,14 @@ class HtmlParserService
             }
 
             // index 0 -> Day, index 1 -> Date, index 2 -> Holiday Name, index 3 -> Type, index 4 -> Comments
-            $date = Carbon::parse($td[1]?->textContent ?? '')->setYear($year);
-            $type = HolidayType::tryFrom($td[3]?->textContent);
+            $date = Carbon::parse($td[1]->textContent ?? '')->setYear($year);
+            $type = HolidayType::tryFrom($td[3]->textContent);
             $holiday = new HolidayDto(
-                day: $td[0]?->textContent ?? '',
+                day: $td[0]->textContent ?? '',
                 date: $date,
-                holidayName: $td[2]?->textContent ?? '',
+                holidayName: $td[2]->textContent ?? '',
                 type: $type,
-                comments: $td[4]?->textContent ?? '',
+                comments: $td[4]->textContent ?? '',
             );
 
             $holidays->push($holiday);

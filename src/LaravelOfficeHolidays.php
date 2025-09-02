@@ -16,7 +16,7 @@ class LaravelOfficeHolidays
      */
     public function getAllHolidays(string $country, int $year)
     {
-        $connector = new HolidayConnector();
+        $connector = new HolidayConnector;
         $request = new GetAllHoliday($year, $country);
 
         return $connector->send($request)->dto();
@@ -28,7 +28,7 @@ class LaravelOfficeHolidays
      */
     public function getHolidaysByState(string $country, int $year, string $state)
     {
-        $connector = new HolidayConnector();
+        $connector = new HolidayConnector;
         $request = new GetAllHolidayByState($year, $country, $state);
 
         return $connector->send($request)->dto();

@@ -23,8 +23,7 @@ class GetAllHolidayByState extends Request implements Cacheable
         public int $year,
         protected string $country,
         protected string $state,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

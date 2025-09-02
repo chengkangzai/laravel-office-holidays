@@ -13,6 +13,5 @@ class HolidayDto
         public string $holidayName,
         public HolidayType $type,
         public string $comments,
-    ) {
-    }
+    ) {}
 }

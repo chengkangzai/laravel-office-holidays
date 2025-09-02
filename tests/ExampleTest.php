@@ -18,7 +18,7 @@ it('can get malaysia holiday', function () {
     $s = app(LaravelOfficeHolidays::class)->getAllHolidays('malaysia', 2024);
 
     expect($s)->toBeInstanceOf(Collection::class)
-        ->toHaveCount(54)
+        ->toHaveCount(56)
         ->and($s[0]->day)->toBe('Monday')
         ->and($s[0]->date)->toBeInstanceOf(Carbon::class)
         ->and($s[0]->date->format('Y-m-d'))->toBe('2024-01-01')
@@ -35,7 +35,7 @@ it('can get malaysia - johor holiday', function () {
     $s = app(LaravelOfficeHolidays::class)->getHolidaysByState('malaysia', 2024, MalaysiaStates::Johor->value);
 
     expect($s)->toBeInstanceOf(Collection::class)
-        ->toHaveCount(20)
+        ->toHaveCount(21)
         ->and($s[0]->day)->toBe('Thursday')
         ->and($s[0]->date)->toBeInstanceOf(Carbon::class)
         ->and($s[0]->date->format('Y-m-d'))->toBe('2024-01-25')

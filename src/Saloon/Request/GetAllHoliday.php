@@ -22,8 +22,7 @@ class GetAllHoliday extends Request implements Cacheable
     public function __construct(
         public int $year,
         protected string $country,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {
